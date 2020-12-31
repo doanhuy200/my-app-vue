@@ -5,12 +5,18 @@
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/products">Products</router-link></li>
       <li><router-link to="/about">About</router-link></li>
+      <li>Total todo: {{ totalTodos }}</li>
     </ul>
   </nav>
 </template>
 <script>
   export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    computed: {
+      totalTodos() {
+        return this.$store.state.todos.length;
+      },
+    }
   }
 </script>
 <style scoped>
